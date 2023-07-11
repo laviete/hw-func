@@ -35,29 +35,32 @@
         if (value1 === value2) {
             return null;
         }
-        else{
-            return value1 > value2 ? value1 : value2;
+        if (value1 > value2) {
+            return value1;
+       }
+        if (value1 < value2) {
+            return value2;
         }
     }
     return null;
-  }
-// second variant
-//  function compareValues (value1, value2) {
+ }  
+ 
+//     second variant
+//function compareValues (value1, value2) {
 //    if (typeof value1 === typeof value2) {
 //        if (value1 === value2) {
 //            return null;
 //        }
-//        if (value1 > value2) {
-//            return value1;
-//       }
-//        if (value1 < value2) {
-//            return value2;
+//        else{
+//            return (value1 > value2) ? value1 : value2;
 //        }
-//    }
-//    return null;
 // }
+//    return null;
+//  }
+// second variant
+
   
   console.log(compareValues(3, 9));
   console.log(compareValues(1, 4));
   console.log(compareValues('abc', '11'));
-  console.log(compareValues('1', null));
+  console.log(compareValues('1', 14));
