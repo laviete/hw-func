@@ -1,24 +1,32 @@
- const evenNum='Even';
- const oddNum='Odd';
- const notCorrectValue='The entered value is not a number';
-/** 
- *  1) написати функцію, яка повертає рядок 'odd' або 'even', в залежності від 
- *  прийнятого аргументу(число).
- *  Значення для перевірки функції вводить користувач.
- * @param {number} number
- * @returns {string}
+//1) написати функцію, яка повертає рядок 'odd' або 'even', 
+//в залежності відприйнятого аргументу(число).
+//Значення для перевірки функції вводить користувач.
+const evenNum = "Even";
+const oddNum = "Odd";
+const notCorrectValue = "The entered value is not a number";
+function inputNumFromUser() {
+  const userInput = prompt("Enter number", 1);
+  return userInput;
+}
+/**
+ * 
+ * @param {*} userInput 
+ * @returns 
  */
- function checkOddOrEvenNum () {
-    number = prompt('Enter number', 1);
-    if (number === '' || number === null || Number.isNaN(Number(number))) {
-        return notCorrectValue;
-    }
-    if (number % 2 === 0) {
-        return evenNum;
-    }
-    return oddNum;
+function checkOddOrEvenNum(userInput) {
+  if (
+    userInput === "" ||
+    userInput === null ||
+    Number.isNaN(Number(userInput))
+  ) {
+    return notCorrectValue;
   }
-  console.log(checkOddOrEvenNum());
+  if (userInput % 2 === 0) {
+    return evenNum;
+  }
+  return oddNum;
+}
+console.log(checkOddOrEvenNum(inputNumFromUser()));
   
 
   /**
